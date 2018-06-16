@@ -4,8 +4,8 @@ np = neopixel.NeoPixel(pin0, 100)
 from time import sleep
 from random import randint
 Toy_Mapping = {
-"test" : (0,1,2,3,4,5,6,7),
-"test2" : (8,9,10,11,12,13,14,15),
+"test" : (0,1,2,3,4),
+"test2" : (8,9,10,11,12,13,14,15,16),
 "yellow_ring" : (1,30,31),
 "green_lips" : (2),
 "playdough_tub" : (3),
@@ -81,13 +81,10 @@ Toy_Mapping = {
 "barbie_skirt" : (100),
 }
 
-def toylight(toyname):
-    for lights in Toy_Mapping[toyname]:
-	    red = randint(0,60)
-	    green = randint(0,60)
-	    blue = randint(0,60)
-	    np[lights] = (red, green, blue)
-	    np.show()
-	    sleep(0.1)
-
-toylight("test")
+for lights in Toy_Mapping["test"]:
+	red = 64
+	green = 0
+	blue = 0
+	np[lights] = (red, green, blue)
+	np.show()
+	sleep(100)
