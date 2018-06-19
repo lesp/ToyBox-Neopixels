@@ -90,4 +90,7 @@ def toylight(toyname):
 	    np.show()
 	    sleep(0.1)
 
-toylight("test")
+while True:
+	for key in Toy_Mapping:
+		toylight(key)
+		time.sleep(5)		
